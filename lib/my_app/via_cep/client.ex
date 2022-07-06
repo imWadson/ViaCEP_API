@@ -6,6 +6,7 @@ defmodule MyApp.ViaCep.Client do
   # @base_url "https://viacep.com.br/ws/"
 
   plug Tesla.Middleware.BaseUrl, "https://viacep.com.br/ws"
+  plug Tesla.Middleware.Headers, [{"User-Agent", "ignite_github"}]
   plug Tesla.Middleware.JSON
 
   def get_cep(cep) do
